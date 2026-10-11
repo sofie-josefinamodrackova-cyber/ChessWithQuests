@@ -1,12 +1,14 @@
 class HerniPlocha:
     def __init__(self):
         self.rozmery =(8, 8)
-        self.herni_deska = []
+        sirka, vyska = self.rozmery
+        self.herni_deska = [[None for _ in range (sirka)] for _ in range (vyska)]
+
         self.vyhozene_figurky_b = []
         self.vyhozene_figurky_c = []
     def vrat_obsah(self, souradnice):
         x,y = souradnice
-        return self.herni_deska[x][y]
+        return self.herni_deska[y][x]
     def posun_figurky(self, tah):
         x1, y1 = tah.vychozi_pozice
         x2, y2 = tah.cilova_pozice
@@ -14,6 +16,10 @@ class HerniPlocha:
         self.herni_deska[y1][x1] = None
         self.herni_deska[y2][x2] = figurka
         return True
-    def nahtrad_figurku(self, nova_figurka, tah):
+    def nahrad_figurku(self, nova_figurka, tah):
         x,y= tah.cilova_pozice
         self.herni_deska[y][x] = nova_figurka
+
+
+def herni_deska():
+    return None
