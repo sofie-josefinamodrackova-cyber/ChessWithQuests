@@ -22,7 +22,7 @@ class HlavniOknoFrme(Frame):
                 self.herni_deska.create_rectangle(x1, y1, x2, y2, fill= barva)
 
 
-        for sloupe in range(8):
+        for sloupec in range(8):
             stred_x = sloupe * velikost + velikost / 2
 
             self.herni_deska.create_text(
